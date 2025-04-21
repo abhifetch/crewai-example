@@ -37,11 +37,13 @@ The system consists of multiple specialized agents working together:
    ```
    pip install -r requirements.txt
    ```
-4. Set up environment variables by copying the example file:
+   If there is conflict issue, please install all packages individually.
+   
+5. Set up environment variables by copying the example file:
    ```
    cp .env.example .env
    ```
-5. Edit `.env` file to add your API keys and settings
+6. Edit `.env` file to add your API keys and settings
 
 ## Usage
 
