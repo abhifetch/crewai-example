@@ -37,7 +37,6 @@ The system consists of multiple specialized agents working together:
    ```
    pip install -r requirements.txt
    ```
-   If there is conflict issue, please install all packages individually.
    
 5. Set up environment variables by copying the example file:
    ```
@@ -50,7 +49,7 @@ The system consists of multiple specialized agents working together:
 ### Start the Trip Planner Agent
 
 ```
-python main_uagents.py
+python main_uagents.py #change the name of agent and description according to you
 ```
 
 This will start the main trip planner agent with the specified address. You should see information about the agent's address and server details in the console.
@@ -58,7 +57,7 @@ This will start the main trip planner agent with the specified address. You shou
 ### Start the Client Agent
 
 ```
-python client_agent.py
+python client_agent.py # check the address of main_uagent if it is same as main uagent's address
 ```
 
 This starts a client agent that can send trip planning requests to the main agent.

@@ -1,5 +1,6 @@
 uagents==0.22.3
 uagents-adapter==0.1.0
-crewai==0.114.0
-langchain-openai==0.3.14
+crewai==0.105.0
+langchain-openai==0.2.13
 python-dotenv==1.0.0
+langchain==0.3.0
