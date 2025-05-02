@@ -5,7 +5,7 @@ import os
 
 from crewai import Crew
 from dotenv import load_dotenv
-from uagents_adapter.crewai import CrewAIRegisterTool
+from uagents_adapter import CrewaiRegisterTool
 
 from trip_agents import TripAgents
 from trip_tasks import TripTasks
@@ -64,10 +64,10 @@ def main():
 
     # Load API key from environment
     load_dotenv()
-    api_key = os.getenv("AGENTVERSE_API_KEY")
+    api_key = os.getenv("AV_API_KEY")
     openai_api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
-        print("Error: AGENTVERSE_API_KEY not found in environment")
+        print("Error: AV_API_KEY not found in environment")
         return
 
     if not openai_api_key:
@@ -81,7 +81,7 @@ def main():
     trip_crew = TripCrew("", "", "", "")
 
     # Create tool for registering the crew with Agentverse
-    register_tool = CrewAIRegisterTool()
+    register_tool = CrewaiRegisterTool()
 
     # Define parameters schema for the trip planner
     query_params = {
@@ -95,13 +95,14 @@ def main():
     result = register_tool.run(
         tool_input={
             "crew_obj": trip_crew,
-            "name": "Trip Planner Crew AI Agent adapters",
+            "name": "Trip Planner Crew AI Agent adapters testing",
             "port": 8080,
             "description": "A CrewAI agent that helps plan trips based on preferences",
             "api_token": api_key,
             "mailbox": True,
             "query_params": query_params,
             "example_query": "Plan a trip from New York to Paris in June, I'm interested in art and history other than museums.",
+            "ai_agent_address": "agent1q0h70caed8ax769shpemapzkyk65uscw4xwk6dc4t3emvp5jdcvqs9xs32y"
         }
     )
 
